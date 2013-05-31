@@ -1,0 +1,12 @@
+This is a prototype implementation, integrating StreamingKMeans clustering into
+Storm as a bolt,
+- StreamingKMeansBolt
+and an aggregator,
+- StreamingKMeansAggregator
+
+There are 2 simple tests that create a linear topology from a spout generating
+random vectors (HypercubeSpout) to the clusterer and also through some bolts
+that write data to disk as sequence files.
+
+The output centroids are then read back in and the distribution of distances is
+computed and the results are reasonable (nearly equally sized clusters).
